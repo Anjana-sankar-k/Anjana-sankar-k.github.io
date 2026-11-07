@@ -1,0 +1,9 @@
+/** Burgundy editorial project index organized by current, research, and random builds. */
+import PortfolioLayout, { LinkRow, PageIntro } from "@/components/PortfolioLayout";
+
+const groups = [
+  { title: "Active ones", note: "Tools and ideas currently in orbit.", items: [["Krishi SahayI", "https://krishisahayi.streamlit.app/"], ["The Better Plan — NASA Global Nominee", "https://thebetterplan.streamlit.app/"], ["Human vs AI Detector (only using statistical methods)", "https://github.com/Anjana-sankar-k/human-ai"], ["CFO Advisor", "https://cfoadvisor.streamlit.app/"]] },
+  { title: "Research projects", note: "Questions that became prototypes, papers, or both.", items: [["Krishi Research — presented at SPELLL 2025", "https://github.com/Anjana-sankar-k/krishi-research-"], ["SciVis 26", "https://scivis26.streamlit.app/"], ["Smarter, Smaller, Fairer", "https://github.com/Anjana-sankar-k/smarter_smaller_fairer"]] },
+  { title: "Random", note: "The side of the lab with the best naming conventions.", items: [["YAPMA", "https://github.com/Anjana-sankar-k/YAPMA"], ["PixelPal", "https://github.com/Anjana-sankar-k/PixelPal"], ["HMO", "https://github.com/Anjana-sankar-k/HMO"], ["prophecy.exe", "https://github.com/Anjana-sankar-k/prophecy.exe"]] },
+];
+export default function Projects() { return <PortfolioLayout><main className="inner-page"><PageIntro eyebrow="02 / PROJECTS" title={<>Built, tested,<br /><span>still becoming.</span></>} description="A little catalogue of useful things, research rabbit holes, and experiments that refused to stay ideas." /><div className="project-groups">{groups.map(group => <section className="project-group" key={group.title}><div><p className="section-kicker">{group.title.toUpperCase()}</p><p className="section-note">{group.note}</p></div><div className="project-list">{group.items.map(([label, href]) => <LinkRow key={href} label={label} href={href} />)}</div></section>)}</div></main></PortfolioLayout>; }
